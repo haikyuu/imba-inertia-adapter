@@ -1,10 +1,12 @@
 import 'imba/reset.css'
+import { People } from './people'
 
 export tag App
 	def render
 		<self>
 			<div[c:blue6]> "Welcome!"
 			<div> "Url is {document.location.href}"
+			<People movies=[]>
 			if $web$
 				<p> "This is rendered from the client"
 			else

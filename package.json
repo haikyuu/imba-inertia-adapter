@@ -1,10 +1,12 @@
 {
   "dependencies": {
+    "edgedb": "^0.15.2",
     "express": "^4.17.1",
-    "imba": "^2.0.0-alpha.133"
+    "imba": "^2.0.0-alpha.156",
+    "inertia-node": "^2.0.0"
   },
   "scripts": {
-    "start": "imba src/http.imba",
-    "start-express": "imba src/express.imba"
+    "start": "imba -w src/http.imba",
+    "start-express": "imba -w src/ssr-only.imba"
   }
 }
