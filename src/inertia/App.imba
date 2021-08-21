@@ -4,6 +4,7 @@ let headManager
 let current
 export tag InertiaApp
 	prop props
+	prop currentPage
 	def setup
 		current =
 			component: props.initialComponent || null,
@@ -29,5 +30,5 @@ export tag InertiaApp
 			<self>
 				<span> "no current component"
 		let props = current.page.props
-		<self>
+		<self currentPage=current>
 			<{current.component} props={props}>

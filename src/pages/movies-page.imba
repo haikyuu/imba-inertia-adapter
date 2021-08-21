@@ -18,7 +18,7 @@ tag movies-page
 		<self>
 			<div[c:blue6]> "Welcome!"
 			<div> "Url is {document.location.href}"
-			<a href="/people"> "people"
+			<inertia-link href="/people"> "people"
 			<ul> for movie in props.props.movies
 				<li>
 					<span> "movie: {movie.id} {movie.title}  {movie.year}"

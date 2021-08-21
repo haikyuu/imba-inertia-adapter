@@ -15,10 +15,11 @@ tag people-page
 	def deletePerson id
 		Inertia.delete "/people?id={id}"
 	def render
-		
+		console.log #context.currentPage
 		<self>
 
 			<h1> String form.processing
+			<inertia-link href="/movies"> "movies"
 			<div[c:blue6]> "Welcome!"
 			<div> "Url is {document.location.href}"
 			<ul> for person in props.props.people
