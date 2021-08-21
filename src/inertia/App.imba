@@ -29,6 +29,5 @@ export tag InertiaApp
 			<self>
 				<span> "no current component"
 		let props = current.page.props
-		console.log "props render", props
 		<self>
 			<{current.component} props={props}>

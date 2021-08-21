@@ -12,7 +12,6 @@ export default def createInertiaApp { id = 'app', resolve, setup, title, page, r
 
 	const imbaApp = await resolveComponent(initialPage.component).then
 		do(initialComponent)
-			console.log "init", initialComponent
 			setup {
 				el,
 				App: InertiaApp,
