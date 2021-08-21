@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@inertiajs/inertia": "^0.10.1",
     "edgedb": "^0.15.2",
     "express": "^4.17.1",
     "imba": "^2.0.0-alpha.156",
@@ -7,6 +8,7 @@
   },
   "scripts": {
     "start": "imba -w src/http.imba",
-    "start-express": "imba -w src/ssr-only.imba"
+    "start-express": "imba -w src/ssr-only.imba",
+    "build": "imba build src/ssr-only.imba"
   }
 }
