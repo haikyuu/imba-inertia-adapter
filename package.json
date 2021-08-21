@@ -8,7 +8,8 @@
     "inertia-node": "^2.0.0"
   },
   "scripts": {
-    "start": "imba -w src/ssr-only.imba",
+    "start": "imba -w src/no-edgedb.imba",
+    "start-edgedb": "imba -w src/ssr-only.imba",
     "build": "imba build src/ssr-only.imba"
   }
 }
