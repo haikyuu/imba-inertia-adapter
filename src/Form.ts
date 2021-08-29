@@ -11,14 +11,15 @@ export default class Form<TForm extends Object> {
   processing: boolean = false;
   isDirty: boolean;
   hasErrors: boolean;
-  errors: Record<keyof TForm, string>;
+  errors: Record<keyof TForm, string> = {} as Record<keyof TForm, string>;
   progress: number;
   wasSuccessful: boolean;
   recentlySuccessful: boolean;
 
   cancelToken: import("axios").CancelTokenSource;
-  transform: (callback: (data: TForm) => TForm) => void = (callback) => {
+  transform: (callback: (data: TForm) => TForm) => Form<TForm> = (callback) => {
     this._transform = callback;
+    return this;
   };
 
   constructor(props: TForm) {

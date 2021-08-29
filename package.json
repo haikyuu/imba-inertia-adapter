@@ -1,15 +1,15 @@
 {
+  "name": "imba-inertia-adapter",
+  "version": "2.0.0-alpha.3",
+  "main": "./index.imba",
   "dependencies": {
-    "@inertiajs/inertia": "^0.10.1",
-    "body-parser": "^1.19.0",
-    "edgedb": "^0.15.2",
-    "express": "^4.17.1",
-    "imba": "^2.0.0-alpha.156",
-    "inertia-node": "^2.0.0"
+    "@inertiajs/inertia": "^0.10.1"
+  },
+  "peerDependencies": {
+    "imba": "2.x"
   },
   "scripts": {
     "start": "imba -w src/no-edgedb.imba",
-    "start-edgedb": "imba -w src/ssr-only.imba",
     "build": "imba build src/ssr-only.imba"
   }
 }
