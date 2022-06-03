@@ -1,15 +1,18 @@
 {
   "name": "imba-inertia-adapter",
-  "version": "2.0.0-alpha.3",
-  "main": "./index.imba",
+  "version": "2.0.0-alpha.209",
+  "main": "./dist/index.js",
   "dependencies": {
-    "@inertiajs/inertia": "^0.10.1"
+    "@inertiajs/inertia": "^0.11.0"
   },
   "peerDependencies": {
-    "imba": "2.x"
+    "imba": "^2.0.0-alpha.208"
   },
   "scripts": {
-    "start": "imba -w src/no-edgedb.imba",
-    "build": "imba build src/ssr-only.imba"
+    "build": "imbac src -o dist && npx esbuild src/Form.ts --outfile=dist/Form.js",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.42"
   }
 }

@@ -38,12 +38,12 @@ import { Form } from 'imba-inertia-adapter'
 tag edit-contacts-page
 	prop props
 	def setup
-		const {last_name = "", first_name = ""} = props.props.contact;
+		const {last_name = "", first_name = ""} = props.contact;
 		self.form = new Form
 			first_name: first_name
 			last_name: last_name
 	def render
-		const {contact} = props.props
+		const {contact} = props
 		<self>
 			"Loading" if form.processing
 			<form @submit.prevent=form.put("/contacts/{contact.id}")>
@@ -64,11 +64,10 @@ If your backend adapter supports them, they can be accessed like regular props
 
 #or
 
-props.props.flash
+props.flash
 ```
 
 ## Notes
-- Each page is passed a `props` prop with a nested `props`. --> access it with `props.props.data`.
 - You can change forms by simple assignment: `form.data.name = "Abdellah"`
 
 

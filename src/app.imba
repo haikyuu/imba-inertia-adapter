@@ -11,7 +11,7 @@ export tag InertiaApp
 			page: props.initialPage,
 			key: null
 		headManager = createHeadManager
-			typeof window === 'undefined',
+			typeof global.window === 'undefined',
 			props.titleCallback || do(title) title,
 			props.onHeadUpdate || do(a) a
 		Inertia.init
@@ -30,6 +30,5 @@ export tag InertiaApp
 			<self>
 				<span> "no current component"
 		let props = current.page.props
-		console.log props, current.component
 		<self currentPage=current>
-			<{current.component} props={props}>
+			<{current.component} props=props>
