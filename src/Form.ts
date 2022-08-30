@@ -45,7 +45,7 @@ export default class Form<TForm extends Object> {
           { ...this.data }
         );
     }
-    global.window.imba.commit();
+    globalThis.window.imba.commit();
   };
   clearErrors = (...fields: (keyof TForm)[]): void => {
     this.errors = Object.keys(this.errors).reduce(
@@ -79,7 +79,7 @@ export default class Form<TForm extends Object> {
     if (this.cancelToken) {
       this.cancelToken.cancel();
     }
-    global.window.imba.commit();
+    globalThis.window.imba.commit();
   };
 
   submit = (
@@ -118,7 +118,7 @@ export default class Form<TForm extends Object> {
         if (options.onProgress) {
           options.onProgress(event);
         }
-        global.window.imba.commit();
+        globalThis.window.imba.commit();
       },
       onSuccess: (page) => {
         if (this.isMounted) {
@@ -131,7 +131,7 @@ export default class Form<TForm extends Object> {
           this.recentlySuccessfulTimeoutId = setTimeout(() => {
             if (this.isMounted) {
               this.recentlySuccessful = false;
-              global.window.imba.commit();
+              globalThis.window.imba.commit();
             }
           }, 2000);
         }
@@ -139,7 +139,7 @@ export default class Form<TForm extends Object> {
         if (options.onSuccess) {
           options.onSuccess(page);
         }
-        global.window.imba.commit();
+        globalThis.window.imba.commit();
       },
       onError: (errors) => {
         if (this.isMounted) {
@@ -152,7 +152,7 @@ export default class Form<TForm extends Object> {
         if (options.onError) {
           options.onError(errors);
         }
-        global.window.imba.commit();
+        globalThis.window.imba.commit();
       },
       onCancel: () => {
         if (this.isMounted) {
@@ -163,7 +163,7 @@ export default class Form<TForm extends Object> {
         if (options.onCancel) {
           options.onCancel();
         }
-        global.window.imba.commit();
+        globalThis.window.imba.commit();
       },
       onFinish: () => {
         if (this.isMounted) {
@@ -177,7 +177,7 @@ export default class Form<TForm extends Object> {
           // @ts-ignore
           options.onFinish();
         }
-        global.window.imba.commit();
+        globalThis.window.imba.commit();
       },
     };
 

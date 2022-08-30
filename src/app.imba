@@ -11,7 +11,7 @@ export tag InertiaApp
 			page: props.initialPage,
 			key: null
 		headManager = createHeadManager
-			typeof global.window === 'undefined',
+			typeof globalThis.window === 'undefined',
 			props.titleCallback || do(title) title,
 			props.onHeadUpdate || do(a) a
 		Inertia.init
